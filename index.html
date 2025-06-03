@@ -3,361 +3,385 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Développeur Web & Mobile</title>
+    <title>Sergio Junior Chebeu - Développeur Web & Mobile</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- AOS (Animate On Scroll) -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#6366f1',
+                        secondary: '#8b5cf6',
+                        accent: '#06b6d4',
+                        success: '#10b981',
+                        warning: '#f59e0b',
+                        danger: '#ef4444',
+                        dark: '#0f172a',
+                        light: '#f8fafc'
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'bounce-slow': 'bounce 3s infinite',
+                        'spin-slow': 'spin 8s linear infinite',
+                        'gradient': 'gradient 15s ease infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' }
+                        },
+                        gradient: {
+                            '0%, 100%': {
+                                'background-size': '200% 200%',
+                                'background-position': 'left center'
+                            },
+                            '50%': {
+                                'background-size': '200% 200%',
+                                'background-position': 'right center'
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body class="bg-slate-50 text-slate-900">
-    <!-- Header/Navigation -->
-    <header class="fixed w-full bg-white/80 backdrop-blur-sm z-50 shadow-sm">
-        <nav class="container mx-auto px-6 py-4 flex items-center justify-between">
-            <a href="#" class="text-2xl font-bold text-indigo-600">Portfolio</a>
-
-            <!-- Desktop links -->
-            <div class="hidden md:flex space-x-8">
-                <a href="#accueil" class="hover:text-indigo-600 transition-colors">Accueil</a>
-                <a href="#apropos" class="hover:text-indigo-600 transition-colors">À propos</a>
-                <a href="#projets" class="hover:text-indigo-600 transition-colors">Projets</a>
-                <a href="#competences" class="hover:text-indigo-600 transition-colors">Compétences</a>
-                <a href="#contact" class="hover:text-indigo-600 transition-colors">Contact</a>
+<body class="bg-light dark:bg-slate-900 text-dark dark:text-white font-poppins transition-colors duration-300">
+    <!-- Header -->
+    <header class="fixed w-full bg-white/95 dark:bg-slate-900/95 backdrop-blur-md z-50 shadow-sm border-b border-gray-100 dark:border-slate-700 transition-colors duration-300">
+        <nav class="container mx-auto max-w-screen-xl px-4 py-3 flex items-center justify-between">
+            <a href="#" class="text-xl font-bold text-primary dark:text-primary transition-colors duration-300">Sergio.dev</a>
+            <div class="hidden md:flex space-x-6 items-center">
+                <a href="#accueil" class="text-sm font-medium hover:text-primary dark:hover:text-primary transition-all duration-300 hover:scale-105">Accueil</a>
+                <a href="#apropos" class="text-sm font-medium hover:text-primary dark:hover:text-primary transition-all duration-300 hover:scale-105">À propos</a>
+                <a href="#projets" class="text-sm font-medium hover:text-primary dark:hover:text-primary transition-all duration-300 hover:scale-105">Projets</a>
+                <a href="#contact" class="text-sm font-medium hover:text-primary dark:hover:text-primary transition-all duration-300 hover:scale-105">Contact</a>
+                <!-- Dark mode toggle -->
+                <button id="theme-toggle" class="p-2 rounded-lg bg-gray-100 dark:bg-slate-700 hover:bg-gray-200 dark:hover:bg-slate-600 transition-all duration-300 hover:scale-110">
+                    <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                    </svg>
+                    <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M10 2L13.09 8.26L20 9L14 14.74L15.18 21.02L10 17.77L4.82 21.02L6 14.74L0 9L6.91 8.26L10 2Z"></path>
+                    </svg>
+                </button>
             </div>
-
-            <!-- Mobile menu button -->
-            <button id="mobile-menu-button" class="md:hidden focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                          d="M4 6h16M4 12h16m-16 6h16"></path>
+            <button id="mobile-menu-btn" class="md:hidden p-2 hover:bg-gray-100 dark:hover:bg-slate-700 rounded-lg transition-all duration-300">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-16 6h16"></path>
                 </svg>
             </button>
         </nav>
-
-        <!-- Mobile links (initially hidden) -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
-            <div class="px-6 py-4 space-y-4 flex flex-col">
-                <a href="#accueil" class="hover:text-indigo-600 transition-colors">Accueil</a>
-                <a href="#apropos" class="hover:text-indigo-600 transition-colors">À propos</a>
-                <a href="#projets" class="hover:text-indigo-600 transition-colors">Projets</a>
-                <a href="#competences" class="hover:text-indigo-600 transition-colors">Compétences</a>
-                <a href="#contact" class="hover:text-indigo-600 transition-colors">Contact</a>
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-slate-900 shadow-lg border-t dark:border-slate-700 transition-colors duration-300">
+            <div class="container mx-auto max-w-screen-xl px-4 py-3 space-y-2">
+                <a href="#accueil" class="block py-2 text-sm font-medium hover:text-primary dark:hover:text-primary transition-all duration-300">Accueil</a>
+                <a href="#apropos" class="block py-2 text-sm font-medium hover:text-primary dark:hover:text-primary transition-all duration-300">À propos</a>
+                <a href="#projets" class="block py-2 text-sm font-medium hover:text-primary dark:hover:text-primary transition-all duration-300">Projets</a>
+                <a href="#contact" class="block py-2 text-sm font-medium hover:text-primary dark:hover:text-primary transition-all duration-300">Contact</a>
+                <div class="pt-2">
+                    <button id="mobile-theme-toggle" class="w-full p-2 rounded-lg bg-gray-100 dark:bg-slate-700 hover:bg-gray-200 dark:hover:bg-slate-600 transition-all duration-300 text-left">
+                        <span id="mobile-theme-text">Mode sombre</span>
+                    </button>
+                </div>
             </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section id="accueil" class="pt-20 min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 to-indigo-50">
-        <div class="container mx-auto px-6 py-12">
-            <div class="flex flex-col-reverse md:flex-row items-center">
-                <!-- Texte -->
-                <div class="w-full md:w-1/2 mt-8 md:mt-0" data-aos="fade-right">
-                    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">
+    <section id="accueil" class="pt-16 min-h-screen flex items-center bg-gradient-to-br from-light via-blue-50 to-indigo-50 dark:from-slate-900 dark:via-slate-800 dark:to-indigo-900 transition-colors duration-500" data-aos="fade-up">
+        <div class="container mx-auto max-w-screen-xl px-4 py-8">
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="flex-1 text-center md:text-left" data-aos="fade-right" data-aos-duration="1000">
+                    <h1 class="text-3xl md:text-5xl font-bold mb-4 leading-tight">
                         Développeur 
-                        <span class="text-indigo-600">Web & Mobile</span>
+                        <span class="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent animate-gradient">Web & Mobile</span>
                     </h1>
-                    <p class="text-lg sm:text-xl text-slate-600 mb-6">
-                        Création d'applications web et mobiles modernes et intuitives
+                    <p class="text-gray-600 dark:text-gray-300 text-lg mb-6 max-w-lg transition-colors duration-300">
+                        Je crée des applications web et mobiles modernes, performantes et intuitives
                     </p>
-                    <div class="space-x-4">
-                        <a href="#contact" class="inline-block bg-indigo-600 text-white px-6 sm:px-8 py-3 rounded-lg hover:bg-indigo-700 transition-colors">
+                    <div class="flex flex-col sm:flex-row gap-3 justify-center md:justify-start" data-aos="fade-left" data-aos-delay="200">
+                        <a href="#contact" class="bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 rounded-lg font-medium hover:from-secondary hover:to-primary transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
                             Me contacter
                         </a>
-                        <a href="#projets" class="inline-block border-2 border-indigo-600 text-indigo-600 px-6 sm:px-8 py-3 rounded-lg hover:bg-indigo-50 transition-colors">
-                            Voir mes projets
+                        <a href="#projets" class="border-2 border-primary dark:border-primary text-primary dark:text-primary px-6 py-3 rounded-lg font-medium hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white transition-all duration-300 hover:scale-105">
+                            Mes projets
                         </a>
                     </div>
                 </div>
-
-                <!-- Photo personnelle -->
-                <div class="w-full md:w-1/2 flex justify-center" data-aos="fade-left">
+                <div class="flex-1 flex flex-col items-center" data-aos="zoom-in" data-aos-delay="300">
                     <div class="relative">
-                        <!-- Cercles décoratifs -->
-                        <div class="w-56 h-56 bg-indigo-600/10 rounded-full absolute -top-6 -right-6"></div>
-                        <div class="w-56 h-56 bg-indigo-600/5 rounded-full absolute -bottom-6 -left-6"></div>
-                        <!-- Remplacez "chemin/vers/photo.jpg" par l'URL de votre photo -->
-                        <img src="chemin/vers/photo.jpg" alt="Ma Photo"
-                             class="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 object-cover rounded-full border-4 border-white shadow-lg relative">
+                        <!-- Cercle extérieur avec animation -->
+                        <div class="w-48 h-48 md:w-64 md:h-64 bg-gradient-to-br from-primary/20 via-secondary/20 to-accent/20 rounded-full flex items-center justify-center shadow-2xl animate-pulse-slow hover:animate-float transition-all duration-500">
+                            <!-- Image de la photo -->
+                            <img src="assets/img/mon profil.jpeg" alt="Ma Photo"
+                                class="w-40 h-40 md:w-56 md:h-56 object-cover rounded-full border-4 border-white dark:border-slate-700 shadow-lg transition-all duration-300 hover:scale-110">
+                        </div>
+                        <!-- Cercles animés -->
+                        <div class="absolute -top-4 -right-4 w-16 h-16 bg-gradient-to-br from-accent/30 to-success/30 rounded-full animate-bounce-slow"></div>
+                        <div class="absolute -bottom-4 -left-4 w-12 h-12 bg-gradient-to-br from-secondary/30 to-warning/30 rounded-full animate-pulse-slow"></div>
+                        <div class="absolute top-1/2 -left-8 w-8 h-8 bg-gradient-to-br from-primary/20 to-danger/20 rounded-full animate-spin-slow"></div>
                     </div>
+                    <!-- Nom sous la photo -->
+                    <p class="mt-4 text-xl font-semibold text-secondary dark:text-secondary transition-colors duration-300">Sergio Junior Chebeu</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- À propos Section -->
-    <section id="apropos" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-16" data-aos="fade-up">À propos de moi</h2>
-            <div class="grid md:grid-cols-2 gap-12">
-                <div class="space-y-6" data-aos="fade-right">
-                    <h3 class="text-2xl font-semibold text-indigo-600">Mon parcours</h3>
-                    <p class="text-slate-600 leading-relaxed">
-                        Passionné par le développement web et mobile, je crée des applications modernes et intuitives.
-                        Mon expertise couvre l'ensemble du stack technique, du front-end au back-end, en passant par
-                        le développement mobile.
+    <!-- À propos -->
+    <section id="apropos" class="py-16 bg-white dark:bg-slate-800 transition-colors duration-500">
+        <div class="container mx-auto max-w-screen-xl px-4">
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-12 text-dark dark:text-white transition-colors duration-300" data-aos="fade-up">À propos de moi</h2>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="space-y-4" data-aos="fade-right" data-aos-duration="1000">
+                    <h3 class="text-xl font-semibold text-secondary dark:text-secondary transition-colors duration-300">Mon expertise</h3>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed transition-colors duration-300">
+                        Développeur passionné avec une expertise complète en développement web et mobile. 
+                        Je transforme vos idées en solutions digitales performantes et élégantes.
                     </p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-indigo-600 hover:text-indigo-700 flex items-center">
-                            <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                    <div class="flex gap-4">
+                        <a href="#" class="text-primary hover:text-secondary transition-all duration-300 hover:scale-110" data-aos="fade-in">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.11.82-.26.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"></path>
                             </svg>
-                            GitHub
                         </a>
-                        <a href="#" class="text-indigo-600 hover:text-indigo-700 flex items-center">
-                            <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                        <a href="#" class="text-secondary hover:text-accent transition-all duration-300 hover:scale-110" data-aos="fade-in" data-aos-delay="100">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path>
                             </svg>
-                            LinkedIn
                         </a>
                     </div>
                 </div>
-                <div class="grid grid-cols-2 gap-6" data-aos="fade-left">
-                    <div class="bg-slate-50 p-6 rounded-lg">
-                        <h4 class="font-semibold mb-2">Frontend</h4>
-                        <p class="text-slate-600">React, Vue.js, TailwindCSS</p>
+                <div class="grid grid-cols-2 gap-4" data-aos="fade-left" data-aos-duration="1000">
+                    <div class="flex flex-col items-center bg-light dark:bg-slate-700 p-4 rounded-xl border border-primary hover:bg-primary/10 dark:hover:bg-primary/20 transition-all duration-300 hover:scale-105 hover:shadow-lg">
+                        <img src="assets/img/Flutter.svg" alt="Flutter" class="w-20 h-15 mb-2">
+                        <h4 class="font-semibold text-primary">Flutter</h4>
                     </div>
-                    <div class="bg-slate-50 p-6 rounded-lg">
-                        <h4 class="font-semibold mb-2">Backend</h4>
-                        <p class="text-slate-600">Node.js, Python, PHP</p>
+                    <div class="flex flex-col items-center bg-light dark:bg-slate-700 p-4 rounded-xl border border-primary/10 hover:bg-green-100 transition-all duration-300 hover:scale-105 hover:shadow-lg">
+                        <img src="assets/img/Laravel.svg" alt="Laravel" class="w-20 h-15 mb-2">
+                        <h4 class="font-semibold text-green-600">Laravel</h4>
                     </div>
-                    <div class="bg-slate-50 p-6 rounded-lg">
-                        <h4 class="font-semibold mb-2">Mobile</h4>
-                        <p class="text-slate-600">React Native, Flutter</p>
+                    <div class="flex flex-col items-center bg-light dark:bg-slate-700 p-4 rounded-xl border border-secondary hover:bg-secondary/10 dark:hover:bg-secondary/20 transition-all duration-300 hover:scale-105 hover:shadow-lg">
+                        <img src="assets/img/Firebase.svg" alt="Firebase" class="w-12 h-12 mb-2">
+                        <h4 class="font-semibold text-secondary">Firebase</h4>
                     </div>
-                    <div class="bg-slate-50 p-6 rounded-lg">
-                        <h4 class="font-semibold mb-2">Database</h4>
-                        <p class="text-slate-600">MongoDB, MySQL, PostgreSQL</p>
+                    <div class="flex flex-col items-center bg-light dark:bg-slate-700 p-4 rounded-xl border border-secondary/10 hover:bg-[#FFD8A6]/10 transition-all duration-300 hover:scale-105 hover:shadow-lg">
+                        <img src="assets/img/python.png" alt="Python" class="w-12 h-12 mb-2">
+                        <h4 class="font-semibold text-[#306998]">Python</h4>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projets Section -->
-    <section id="projets" class="py-20 bg-slate-50">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-16" data-aos="fade-up">Mes Projets</h2>
-            <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Projet 1 -->
-                <div class="bg-white rounded-lg overflow-hidden shadow-lg transform hover:-translate-y-1 transition-transform duration-300" data-aos="fade-up">
-                    <div class="h-48 bg-indigo-100"></div>
-                    <div class="p-6">
-                        <h3 class="font-semibold text-xl mb-2">Projet Web</h3>
-                        <p class="text-slate-600 mb-4">Description du projet et technologies utilisées</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-sm">React</span>
-                            <span class="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-sm">Node.js</span>
-                        </div>
+                    <div class="flex flex-col items-center bg-light dark:bg-slate-700 p-4 rounded-xl border border-success hover:bg-success/10 dark:hover:bg-success/20 transition-all duration-300 hover:scale-105 hover:shadow-lg">
+                        <img src="assets/img/mongodb.png" alt="MongoDB" class="w-12 h-12 mb-2">
+                        <h4 class="font-semibold text-green-600">MongoDB</h4>
                     </div>
-                </div>
-                <!-- Projet 2 -->
-                <div class="bg-white rounded-lg overflow-hidden shadow-lg transform hover:-translate-y-1 transition-transform duration-300" data-aos="fade-up" data-aos-delay="100">
-                    <div class="h-48 bg-indigo-100"></div>
-                    <div class="p-6">
-                        <h3 class="font-semibold text-xl mb-2">Application Mobile</h3>
-                        <p class="text-slate-600 mb-4">Description du projet et technologies utilisées</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-sm">React Native</span>
-                            <span class="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-sm">Firebase</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- Projet 3 -->
-                <div class="bg-white rounded-lg overflow-hidden shadow-lg transform hover:-translate-y-1 transition-transform duration-300" data-aos="fade-up" data-aos-delay="200">
-                    <div class="h-48 bg-indigo-100"></div>
-                    <div class="p-6">
-                        <h3 class="font-semibold text-xl mb-2">Site E-commerce</h3>
-                        <p class="text-slate-600 mb-4">Description du projet et technologies utilisées</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-sm">Vue.js</span>
-                            <span class="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-sm">Laravel</span>
-                        </div>
+                    <div class="flex flex-col items-center bg-light dark:bg-slate-700 p-4 rounded-xl border border-success hover:bg-success/10 dark:hover:bg-success/20 transition-all duration-300 hover:scale-105 hover:shadow-lg">
+                        <img src="assets/img/mysql.png" alt="MySQL" class="w-12 h-12 mb-2">
+                        <h4 class="font-semibold text-blue-600">MySQL</h4>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Compétences Section -->
-    <section id="competences" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-16" data-aos="fade-up">Compétences</h2>
-            <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Frontend -->
-                <div class="p-6 bg-slate-50 rounded-lg" data-aos="fade-up">
-                    <h3 class="text-xl font-semibold mb-6">Frontend</h3>
-                    <div class="space-y-4">
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span>HTML/CSS</span>
-                                <span>90%</span>
-                            </div>
-                            <div class="h-2 bg-slate-200 rounded-full">
-                                <div class="h-2 bg-indigo-600 rounded-full" style="width: 90%"></div>
-                            </div>
+    <!-- Projets -->
+    <section id="projets" class="py-16 bg-light dark:bg-slate-900 transition-colors duration-500">
+        <div class="container mx-auto max-w-screen-xl px-4">
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-12 text-dark dark:text-white transition-colors duration-300" data-aos="fade-up">Mes Projets</h2>
+            <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 group" data-aos="zoom-in">
+                    <div class="h-40 bg-gradient-to-br from-primary to-accent group-hover:from-accent group-hover:to-primary transition-all duration-500"></div>
+                    <div class="p-5">
+                        <h3 class="font-semibold text-lg mb-2 text-dark dark:text-white transition-colors duration-300">Application Web</h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-3 transition-colors duration-300">Plateforme e‐commerce moderne avec interface intuitive</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-primary/10 dark:bg-primary/20 text-primary dark:text-primary rounded-md text-xs font-medium transition-all duration-300 hover:bg-primary hover:text-white">React</span>
+                            <span class="px-2 py-1 bg-primary/10 dark:bg-primary/20 text-primary dark:text-primary rounded-md text-xs font-medium transition-all duration-300 hover:bg-primary hover:text-white">Node.js</span>
                         </div>
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span>JavaScript</span>
-                                <span>85%</span>
-                            </div>
-                            <div class="h-2 bg-slate-200 rounded-full">
-                                <div class="h-2 bg-indigo-600 rounded-full" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span>React</span>
-                                <span>80%</span>
-                            </div>
-                            <div class="h-2 bg-slate-200 rounded-full">
-                                <div class="h-2 bg-indigo-600 rounded-full" style="width: 80%"></div>
-                            </div>
-                        </div>
+                        <a href="#" class="inline-block bg-gradient-to-r from-primary to-secondary text-white px-4 py-2 rounded-lg font-medium hover:from-secondary hover:to-accent transition-all duration-300 hover:scale-105">
+                            Voir détails
+                        </a>
                     </div>
                 </div>
-
-                <!-- Backend -->
-                <div class="p-6 bg-slate-50 rounded-lg" data-aos="fade-up" data-aos-delay="100">
-                    <h3 class="text-xl font-semibold mb-6">Backend</h3>
-                    <div class="space-y-4">
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span>Node.js</span>
-                                <span>85%</span>
-                            </div>
-                            <div class="h-2 bg-slate-200 rounded-full">
-                                <div class="h-2 bg-indigo-600 rounded-full" style="width: 85%"></div>
-                            </div>
+                <div class="bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 group" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="h-40 bg-gradient-to-br from-accent to-secondary group-hover:from-secondary group-hover:to-success transition-all duration-500"></div>
+                    <div class="p-5">
+                        <h3 class="font-semibold text-lg mb-2 text-dark dark:text-white transition-colors duration-300">App Mobile</h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-3 transition-colors duration-300">Application de gestion avec notifications en temps réel</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-secondary/10 dark:bg-secondary/20 text-secondary dark:text-secondary rounded-md text-xs font-medium transition-all duration-300 hover:bg-secondary hover:text-white">React Native</span>
+                            <span class="px-2 py-1 bg-secondary/10 dark:bg-secondary/20 text-secondary dark:text-secondary rounded-md text-xs font-medium transition-all duration-300 hover:bg-secondary hover:text-white">Firebase</span>
                         </div>
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span>Python</span>
-                                <span>75%</span>
-                            </div>
-                            <div class="h-2 bg-slate-200 rounded-full">
-                                <div class="h-2 bg-indigo-600 rounded-full" style="width: 75%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span>PHP</span>
-                                <span>70%</span>
-                            </div>
-                            <div class="h-2 bg-slate-200 rounded-full">
-                                <div class="h-2 bg-indigo-600 rounded-full" style="width: 70%"></div>
-                            </div>
-                        </div>
+                        <a href="#" class="inline-block bg-gradient-to-r from-secondary to-accent text-white px-4 py-2 rounded-lg font-medium hover:from-accent hover:to-success transition-all duration-300 hover:scale-105">
+                            Voir détails
+                        </a>
                     </div>
                 </div>
-
-                <!-- Mobile -->
-                <div class="p-6 bg-slate-50 rounded-lg" data-aos="fade-up" data-aos-delay="200">
-                    <h3 class="text-xl font-semibold mb-6">Mobile</h3>
-                    <div class="space-y-4">
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span>React Native</span>
-                                <span>80%</span>
-                            </div>
-                            <div class="h-2 bg-slate-200 rounded-full">
-                                <div class="h-2 bg-indigo-600 rounded-full" style="width: 80%"></div>
-                            </div>
+                <div class="bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 group" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="h-40 bg-gradient-to-br from-secondary to-primary group-hover:from-success group-hover:to-warning transition-all duration-500"></div>
+                    <div class="p-5">
+                        <h3 class="font-semibold text-lg mb-2 text-dark dark:text-white transition-colors duration-300">Dashboard</h3>
+                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-3 transition-colors duration-300">Interface d'administration avec analytics avancés</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-accent/10 dark:bg-accent/20 text-accent dark:text-accent rounded-md text-xs font-medium transition-all duration-300 hover:bg-accent hover:text-white">Vue.js</span>
+                            <span class="px-2 py-1 bg-accent/10 dark:bg-accent/20 text-accent dark:text-accent rounded-md text-xs font-medium transition-all duration-300 hover:bg-accent hover:text-white">Laravel</span>
                         </div>
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span>Flutter</span>
-                                <span>70%</span>
-                            </div>
-                            <div class="h-2 bg-slate-200 rounded-full">
-                                <div class="h-2 bg-indigo-600 rounded-full" style="width: 70%"></div>
-                            </div>
-                        </div>
+                        <a href="#" class="inline-block bg-gradient-to-r from-accent to-success text-white px-4 py-2 rounded-lg font-medium hover:from-success hover:to-warning transition-all duration-300 hover:scale-105">
+                            Voir détails
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-slate-50">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-16" data-aos="fade-up">Me Contacter</h2>
-            <div class="max-w-2xl mx-auto">
-                <form class="space-y-6" data-aos="fade-up">
-                    <div>
-                        <label for="name" class="block text-sm font-medium text-slate-700 mb-1">Nom complet</label>
-                        <input type="text" id="name" class="w-full px-4 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-indigo-600 focus:border-transparent" placeholder="Votre nom">
+    <!-- Contact -->
+    <section id="contact" class="py-16 bg-white dark:bg-slate-800 transition-colors duration-500">
+        <div class="container mx-auto max-w-screen-xl px-4">
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-12 text-dark dark:text-white transition-colors duration-300" data-aos="fade-up">Contactez-moi</h2>
+            <div class="max-w-3xl mx-auto grid md:grid-cols-2 gap-8 items-start">
+                <!-- Gauche : WhatsApp et Mail -->
+                <div class="space-y-8" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="flex items-center gap-3 group">
+                        <div class="w-10 h-10 bg-primary/10 dark:bg-primary/20 rounded-lg flex items-center justify-center group-hover:bg-primary transition-all duration-300 group-hover:scale-110">
+                            <svg class="w-5 h-5 text-primary group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="font-medium text-dark dark:text-white transition-colors duration-300">Email</p>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm transition-colors duration-300">sergiojuniorchebeu@gmail.com</p>
+                        </div>
                     </div>
-                    <div>
-                        <label for="email" class="block text-sm font-medium text-slate-700 mb-1">Email</label>
-                        <input type="email" id="email" class="w-full px-4 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-indigo-600 focus:border-transparent" placeholder="votre@email.com">
+                    <div class="flex items-center gap-3 group">
+                        <div class="w-10 h-10 bg-success/10 dark:bg-success/20 rounded-lg flex items-center justify-center group-hover:bg-success transition-all duration-300 group-hover:scale-110">
+                            <svg class="w-5 h-5 text-success group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="font-medium text-dark dark:text-white transition-colors duration-300">WhatsApp</p>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm transition-colors duration-300">+237 698 824 439</p>
+                        </div>
                     </div>
-                    <div>
-                        <label for="message" class="block text-sm font-medium text-slate-700 mb-1">Message</label>
-                        <textarea id="message" rows="4" class="w-full px-4 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-indigo-600 focus:border-transparent" placeholder="Votre message"></textarea>
-                    </div>
-                    <button type="submit" class="w-full bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition-colors">
-                        Envoyer le message
-                    </button>
-                </form>
+                </div>
+
+                <!-- Droite : Boutons -->
+                <div class="flex flex-col gap-4" data-aos="fade-left" data-aos-delay="200">
+                    <a href="https://wa.me/237698824439" target="_blank"
+                       class="bg-gradient-to-r from-success to-accent text-white px-6 py-3 rounded-lg font-medium hover:from-accent hover:to-primary transition-all duration-300 transform hover:scale-105 text-center shadow-lg hover:shadow-xl">
+                        Écrire sur WhatsApp
+                    </a>
+                    <a href="mailto:sergiojuniorchebeu@gmail.com"
+                       class="bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 rounded-lg font-medium hover:from-secondary hover:to-accent transition-all duration-300 transform hover:scale-105 text-center shadow-lg hover:shadow-xl">
+                        Envoyer un mail
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-slate-900 text-white py-12">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="text-center md:text-left mb-8 md:mb-0">
-                    <h3 class="text-2xl font-bold mb-2">Portfolio</h3>
-                    <p class="text-slate-400">Développeur Web & Mobile</p>
+    <footer class="bg-dark text-white py-6">
+        <div class="container mx-auto max-w-screen-xl px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                <div class="text-center md:text-left">
+                    <h3 class="text-lg font-bold mb-1">Sergio Junior Chebeu</h3>
+                    <p class="text-gray-400 text-sm">Développeur Web & Mobile</p>
                 </div>
-                <div class="flex space-x-6">
-                    <a href="#" class="hover:text-indigo-400 transition-colors">
-                        <span class="sr-only">GitHub</span>
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <div class="flex gap-4">
+                    <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-primary transition-colors">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.11.82-.26.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"></path>
                         </svg>
                     </a>
-                    <a href="#" class="hover:text-indigo-400 transition-colors">
-                        <span class="sr-only">LinkedIn</span>
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <a href="#" class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-primary transition-colors">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path>
-                        </svg>
-                    </a>
-                    <a href="mailto:your@email.com" class="hover:text-indigo-400 transition-colors">
-                        <span class="sr-only">Email</span>
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                        </svg>
-                    </a>
-                    <a href="https://wa.me/yourphonenumber" class="hover:text-indigo-400 transition-colors">
-                        <span class="sr-only">WhatsApp</span>
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
                         </svg>
                     </a>
                 </div>
             </div>
-            <div class="text-center mt-8">
-                <p class="text-slate-400">&copy; 2025 Tous droits réservés</p>
-            </div>
+            <p class="mt-6 text-center text-sm text-gray-400 transition-colors duration-300">
+                &copy; 2025 Sergio Junior Chebeu. Tous droits réservés.
+            </p>
         </div>
     </footer>
 
+    <!-- AOS init -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Initialisation des animations AOS
         AOS.init({
             duration: 800,
             easing: 'ease-in-out',
             once: true
         });
 
+        // Dark/light mode toggle
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const mobileThemeBtn = document.getElementById('mobile-theme-toggle');
+        const darkIcon = document.getElementById('theme-toggle-dark-icon');
+        const lightIcon = document.getElementById('theme-toggle-light-icon');
+        const mobileIconText = document.getElementById('mobile-theme-text');
+
+        // Initialize icons based on localStorage
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            darkIcon.classList.remove('hidden');
+            mobileIconText.textContent = 'Mode clair';
+        } else {
+            document.documentElement.classList.remove('dark');
+            lightIcon.classList.remove('hidden');
+            mobileIconText.textContent = 'Mode sombre';
+        }
+
+        function toggleTheme() {
+            darkIcon.classList.toggle('hidden');
+            lightIcon.classList.toggle('hidden');
+            document.documentElement.classList.toggle('dark');
+            if (document.documentElement.classList.contains('dark')) {
+                localStorage.setItem('theme', 'dark');
+                mobileIconText.textContent = 'Mode clair';
+            } else {
+                localStorage.setItem('theme', 'light');
+                mobileIconText.textContent = 'Mode sombre';
+            }
+        }
+
+        themeToggleBtn.addEventListener('click', toggleTheme);
+        mobileThemeBtn.addEventListener('click', toggleTheme);
+
         // Menu mobile toggle
-        const menuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        menuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Fermer le menu mobile lors du clic sur un lien
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+
+        // Scroll smooth pour tous les liens d'ancrage
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
         });
     </script>
 </body>
