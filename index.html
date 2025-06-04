@@ -190,56 +190,350 @@
         </div>
     </section>
 
-    <!-- Projets -->
-    <section id="projets" class="py-16 bg-light dark:bg-slate-900 transition-colors duration-500">
-        <div class="container mx-auto max-w-screen-xl px-4">
-            <h2 class="text-2xl md:text-3xl font-bold text-center mb-12 text-dark dark:text-white transition-colors duration-300" data-aos="fade-up">Mes Projets</h2>
-            <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 group" data-aos="zoom-in">
-                    <div class="h-40 bg-gradient-to-br from-primary to-accent group-hover:from-accent group-hover:to-primary transition-all duration-500"></div>
-                    <div class="p-5">
-                        <h3 class="font-semibold text-lg mb-2 text-dark dark:text-white transition-colors duration-300">Application Web</h3>
-                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-3 transition-colors duration-300">Plateforme e‐commerce moderne avec interface intuitive</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-2 py-1 bg-primary/10 dark:bg-primary/20 text-primary dark:text-primary rounded-md text-xs font-medium transition-all duration-300 hover:bg-primary hover:text-white">React</span>
-                            <span class="px-2 py-1 bg-primary/10 dark:bg-primary/20 text-primary dark:text-primary rounded-md text-xs font-medium transition-all duration-300 hover:bg-primary hover:text-white">Node.js</span>
-                        </div>
-                        <a href="#" class="inline-block bg-gradient-to-r from-primary to-secondary text-white px-4 py-2 rounded-lg font-medium hover:from-secondary hover:to-accent transition-all duration-300 hover:scale-105">
-                            Voir détails
-                        </a>
-                    </div>
-                </div>
-                <div class="bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 group" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="h-40 bg-gradient-to-br from-accent to-secondary group-hover:from-secondary group-hover:to-success transition-all duration-500"></div>
-                    <div class="p-5">
-                        <h3 class="font-semibold text-lg mb-2 text-dark dark:text-white transition-colors duration-300">App Mobile</h3>
-                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-3 transition-colors duration-300">Application de gestion avec notifications en temps réel</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-2 py-1 bg-secondary/10 dark:bg-secondary/20 text-secondary dark:text-secondary rounded-md text-xs font-medium transition-all duration-300 hover:bg-secondary hover:text-white">React Native</span>
-                            <span class="px-2 py-1 bg-secondary/10 dark:bg-secondary/20 text-secondary dark:text-secondary rounded-md text-xs font-medium transition-all duration-300 hover:bg-secondary hover:text-white">Firebase</span>
-                        </div>
-                        <a href="#" class="inline-block bg-gradient-to-r from-secondary to-accent text-white px-4 py-2 rounded-lg font-medium hover:from-accent hover:to-success transition-all duration-300 hover:scale-105">
-                            Voir détails
-                        </a>
-                    </div>
-                </div>
-                <div class="bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 group" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="h-40 bg-gradient-to-br from-secondary to-primary group-hover:from-success group-hover:to-warning transition-all duration-500"></div>
-                    <div class="p-5">
-                        <h3 class="font-semibold text-lg mb-2 text-dark dark:text-white transition-colors duration-300">Dashboard</h3>
-                        <p class="text-gray-600 dark:text-gray-300 text-sm mb-3 transition-colors duration-300">Interface d'administration avec analytics avancés</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="px-2 py-1 bg-accent/10 dark:bg-accent/20 text-accent dark:text-accent rounded-md text-xs font-medium transition-all duration-300 hover:bg-accent hover:text-white">Vue.js</span>
-                            <span class="px-2 py-1 bg-accent/10 dark:bg-accent/20 text-accent dark:text-accent rounded-md text-xs font-medium transition-all duration-300 hover:bg-accent hover:text-white">Laravel</span>
-                        </div>
-                        <a href="#" class="inline-block bg-gradient-to-r from-accent to-success text-white px-4 py-2 rounded-lg font-medium hover:from-success hover:to-warning transition-all duration-300 hover:scale-105">
-                            Voir détails
-                        </a>
-                    </div>
-                </div>
+<!-- === SECTION Projets === -->
+<section id="projets" class="py-16 bg-light dark:bg-slate-900 transition-colors duration-500">
+    <div class="container mx-auto max-w-screen-xl px-4">
+      <h2
+        class="text-2xl md:text-3xl font-bold text-center mb-12 text-dark dark:text-white transition-colors duration-300"
+        data-aos="fade-up"
+      >
+        Mes Projets
+      </h2>
+      <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+  
+        <!-- Projet 1 Card -->
+        <div
+          class="relative bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 group"
+          data-aos="zoom-in"
+        >
+          <!-- Image réelle -->
+          <img
+            src="assets/img/medreport1.png"
+            alt="Couverture Projet Web"
+            class="w-full h-auto max-h-40 object-contain"
+          />
+  
+          <div class="p-5">
+            <h3
+              class="font-semibold text-lg mb-2 text-dark dark:text-white transition-colors duration-300"
+            >
+              Application Web
+            </h3>
+            <p
+              class="text-gray-600 dark:text-gray-300 text-sm mb-3 transition-colors duration-300"
+            >
+              Plateforme e‐commerce moderne avec interface intuitive
+            </p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span
+                class="px-2 py-1 bg-primary/10 dark:bg-primary/20 text-primary dark:text-primary rounded-md text-xs font-medium transition-all duration-300 hover:bg-primary hover:text-white"
+              >
+                React
+              </span>
+              <span
+                class="px-2 py-1 bg-primary/10 dark:bg-primary/20 text-primary dark:text-primary rounded-md text-xs font-medium transition-all duration-300 hover:bg-primary hover:text-white"
+              >
+                Node.js
+              </span>
             </div>
+            <!-- Bouton déclencheur du modal -->
+            <button
+              onclick="openModal('modal-projet1')"
+              class="inline-block bg-gradient-to-r from-primary to-secondary text-white px-4 py-2 rounded-lg font-medium hover:from-secondary hover:to-accent transition-all duration-300 hover:scale-105"
+            >
+              Voir détails
+            </button>
+          </div>
         </div>
-    </section>
+  
+        <!-- Projet 2 Card -->
+        <div
+          class="relative bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 group"
+          data-aos="zoom-in"
+          data-aos-delay="100"
+        >
+          <img
+            src="assets/img/medreport1.png"
+            alt="Couverture App Mobile"
+            class="w-full h-40 object-cover"
+          />
+  
+          <div class="p-5">
+            <h3
+              class="font-semibold text-lg mb-2 text-dark dark:text-white transition-colors duration-300"
+            >
+              App Mobile
+            </h3>
+            <p
+              class="text-gray-600 dark:text-gray-300 text-sm mb-3 transition-colors duration-300"
+            >
+              Application de gestion avec notifications en temps réel
+            </p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span
+                class="px-2 py-1 bg-secondary/10 dark:bg-secondary/20 text-secondary dark:text-secondary rounded-md text-xs font-medium transition-all duration-300 hover:bg-secondary hover:text-white"
+              >
+                React Native
+              </span>
+              <span
+                class="px-2 py-1 bg-secondary/10 dark:bg-secondary/20 text-secondary dark:text-secondary rounded-md text-xs font-medium transition-all duration-300 hover:bg-secondary hover:text-white"
+              >
+                Firebase
+              </span>
+            </div>
+            <button
+              onclick="openModal('modal-projet2')"
+              class="inline-block bg-gradient-to-r from-secondary to-accent text-white px-4 py-2 rounded-lg font-medium hover:from-accent hover:to-success transition-all duration-300 hover:scale-105"
+            >
+              Voir détails
+            </button>
+          </div>
+        </div>
+  
+        <!-- Projet 3 Card -->
+        <div
+          class="relative bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 hover:scale-105 group"
+          data-aos="zoom-in"
+          data-aos-delay="200"
+        >
+          <img
+            src="assets/img/python.png"
+            alt="Couverture Dashboard"
+            class="w-full h-auto max-h-40 object-contain"
+          />
+  
+          <div class="p-5">
+            <h3
+              class="font-semibold text-lg mb-2 text-dark dark:text-white transition-colors duration-300"
+            >
+              Dashboard
+            </h3>
+            <p
+              class="text-gray-600 dark:text-gray-300 text-sm mb-3 transition-colors duration-300"
+            >
+              Interface d'administration avec analytics avancés
+            </p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span
+                class="px-2 py-1 bg-accent/10 dark:bg-accent/20 text-accent dark:text-accent rounded-md text-xs font-medium transition-all duration-300 hover:bg-accent hover:text-white"
+              >
+                Vue.js
+              </span>
+              <span
+                class="px-2 py-1 bg-accent/10 dark:bg-accent/20 text-accent dark:text-accent rounded-md text-xs font-medium transition-all duration-300 hover:bg-accent hover:text-white"
+              >
+                Laravel
+              </span>
+            </div>
+            <button
+              onclick="openModal('modal-projet3')"
+              class="inline-block bg-gradient-to-r from-accent to-success text-white px-4 py-2 rounded-lg font-medium hover:from-success hover:to-warning transition-all duration-300 hover:scale-105"
+            >
+              Voir détails
+            </button>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+  
+  <!-- ================== MODALS ================== -->
+  
+  <!-- Modal Projet 1 -->
+  <div
+    id="modal-projet1"
+    class="fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-50 px-4"
+  >
+    <div
+      class="relative bg-white dark:bg-slate-800 rounded-xl max-w-2xl w-full overflow-hidden shadow-xl transition-all"
+    >
+      <!-- Bouton fermer -->
+      <button
+        onclick="closeModal('modal-projet1')"
+        class="absolute top-3 right-3 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-300"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+      <div class="px-6 py-8">
+        <h3 class="text-xl font-semibold text-dark dark:text-white mb-4">
+          Application Web – E-commerce
+        </h3>
+        <p class="text-gray-600 dark:text-gray-300 mb-6">
+          Une plateforme e-commerce responsive développée avec React (front-end) et Node.js (API).  
+          Fonctionnalités clés :  
+          – Catalogue produits dynamique ;  
+          – Panier et paiement Stripe ;  
+          – Tableau de bord admin pour gestion des commandes.
+        </p>
+        <!-- Carousel de captures d’écran -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+          <img
+            src="assets/projects/projet1-screenshot1.jpg"
+            alt="Capture 1 Projet 1"
+            class="w-full rounded-lg shadow-md object-cover h-40"
+          />
+          <img
+            src="assets/projects/projet1-screenshot2.jpg"
+            alt="Capture 2 Projet 1"
+            class="w-full rounded-lg shadow-md object-cover h-40"
+          />
+          <!-- <img src="assets/projects/projet1-screenshot3.jpg" alt="Capture 3 Projet 1" class="w-full rounded-lg shadow-md object-cover h-40" /> -->
+        </div>
+        <div class="flex justify-end gap-4">
+          <a
+            href="https://github.com/votre-repo/projet1"
+            target="_blank"
+            class="bg-gradient-to-r from-primary to-secondary text-white px-4 py-2 rounded-lg font-medium hover:from-secondary hover:to-primary transition-all duration-300"
+          >
+            Voir le code
+          </a>
+          <a
+            href="https://votre-app-live.com"
+            target="_blank"
+            class="bg-gradient-to-r from-accent to-success text-white px-4 py-2 rounded-lg font-medium hover:from-success hover:to-warning transition-all duration-300"
+          >
+            Voir en ligne
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal Projet 2 -->
+  <div
+    id="modal-projet2"
+    class="fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-50 px-4"
+  >
+    <div
+      class="relative bg-white dark:bg-slate-800 rounded-xl max-w-2xl w-full overflow-hidden shadow-xl transition-all"
+    >
+      <button
+        onclick="closeModal('modal-projet2')"
+        class="absolute top-3 right-3 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-300"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+      <div class="px-6 py-8">
+        <h3 class="text-xl font-semibold text-dark dark:text-white mb-4">
+          App Mobile – Gestion
+        </h3>
+        <p class="text-gray-600 dark:text-gray-300 mb-6">
+          Application mobile cross-platform sous React Native, utilisant Firebase en back-end.  
+          Fonctionnalités :  
+          – Authentification Google/Email,  
+          – Notifications Push,  
+          – Stockage des données temps réel.
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+          <img
+            src="assets/img/medreport1.png"
+            alt="Capture 1 Projet 2"
+            class="w-full rounded-lg shadow-md object-cover h-40"
+          />
+          <img
+            src="assets/img/medreport2.png"
+            alt="Capture 2 Projet 2"
+            class="w-full rounded-lg shadow-md object-cover h-40"
+          />
+          <!-- <img src="assets/projects/projet2-screenshot3.jpg" alt="Capture 3 Projet 2" class="w-full rounded-lg shadow-md object-cover h-40" /> -->
+        </div>
+        <div class="flex justify-end gap-4">
+          <a
+            href="https://github.com/votre-repo/projet2"
+            target="_blank"
+            class="bg-gradient-to-r from-primary to-secondary text-white px-4 py-2 rounded-lg font-medium hover:from-secondary hover:to-primary transition-all duration-300"
+          >
+            Voir le code
+          </a>
+          <a
+            href="https://play.google.com/store/apps/details?id=votre.app.id"
+            target="_blank"
+            class="bg-gradient-to-r from-accent to-success text-white px-4 py-2 rounded-lg font-medium hover:from-success hover:to-warning transition-all duration-300"
+          >
+            Télécharger (Play Store)
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal Projet 3 -->
+  <div
+    id="modal-projet3"
+    class="fixed inset-0 z-50 hidden items-center justify-center bg-black bg-opacity-50 px-4"
+  >
+    <div
+      class="relative bg-white dark:bg-slate-800 rounded-xl max-w-2xl w-full overflow-hidden shadow-xl transition-all"
+    >
+      <button
+        onclick="closeModal('modal-projet3')"
+        class="absolute top-3 right-3 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-300"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+      <div class="px-6 py-8">
+        <h3 class="text-xl font-semibold text-dark dark:text-white mb-4">
+          Dashboard – Analytics
+        </h3>
+        <p class="text-gray-600 dark:text-gray-300 mb-6">
+          Dashboard Admin construit avec Vue.js (front) et Laravel (API).  
+          Inclut :  
+          – Graphiques Recharts,  
+          – Filtrage dynamique,  
+          – Export CSV.
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+          <img
+            src="assets/projects/projet3-screenshot1.jpg"
+            alt="Capture 1 Projet 3"
+            class="w-full rounded-lg shadow-md object-cover h-40"
+          />
+          <img
+            src="assets/projects/projet3-screenshot2.jpg"
+            alt="Capture 2 Projet 3"
+            class="w-full rounded-lg shadow-md object-cover h-40"
+          />
+          <!-- <img src="assets/projects/projet3-screenshot3.jpg" alt="Capture 3 Projet 3" class="w-full rounded-lg shadow-md object-cover h-40" /> -->
+        </div>
+        <div class="flex justify-end gap-4">
+          <a
+            href="https://github.com/votre-repo/projet3"
+            target="_blank"
+            class="bg-gradient-to-r from-primary to-secondary text-white px-4 py-2 rounded-lg font-medium hover:from-secondary hover:to-primary transition-all duration-300"
+          >
+            Voir le code
+          </a>
+          <a
+            href="https://votre-dashboard-demo.com"
+            target="_blank"
+            class="bg-gradient-to-r from-accent to-success text-white px-4 py-2 rounded-lg font-medium hover:from-success hover:to-warning transition-all duration-300"
+          >
+            Voir en ligne
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- ================== SCRIPT MODAL ================== -->
+  <script>
+    function openModal(id) {
+      document.getElementById(id).classList.remove('hidden');
+      document.getElementById(id).classList.add('flex');
+    }
+    function closeModal(id) {
+      document.getElementById(id).classList.remove('flex');
+      document.getElementById(id).classList.add('hidden');
+    }
+  </script>
+  
 
     <!-- Contact -->
     <section id="contact" class="py-16 bg-white dark:bg-slate-800 transition-colors duration-500">
